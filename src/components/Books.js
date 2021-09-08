@@ -2,7 +2,7 @@
 import React from 'react';
 import Book from './Book';
 
-export default function User() {
+export default function books() {
   const books = [
     {
       id: 1, name: 'book1', category: 'cat1', author: 'auth1',
