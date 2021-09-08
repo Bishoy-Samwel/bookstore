@@ -7,7 +7,7 @@ import {
 import Navbar from './NavBar';
 import Categories from './Categories';
 import Books from './Books';
-
+import AddBookForm from './AddBookForm'
 
 
 export default function Container() {
@@ -25,6 +25,7 @@ export default function Container() {
           <Categories />
         </Route>
       </Switch>
+      <AddBookForm />
     </>
   );
 }
