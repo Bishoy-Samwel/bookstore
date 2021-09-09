@@ -1,16 +1,28 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook, removeBook } from '../redux/books/books';
+
 import Book from './Book';
 
-export default function books() {
-  const books = [
-    {
-      id: 1, name: 'book1', category: 'cat1', author: 'auth1',
-    },
-    {
-      id: 2, name: 'book2', category: 'cat2', author: 'auth2',
-    },
-  ];
+const dispatch = useDispatch();
+
+const submitBookToStore = (title, author) => {
+  const newBook = {
+    id: uuidv4(), // make sure it's unique
+    title,
+    author,
+  };
+  dispatch(addBook(newBook));
+};
+
+const removeBookFromStore = (id) => {
+  dispatch(removeBook(id));
+};
+
+function books() {
+  const books = useSelector((state) => state.counter, shallowEqual);
 
   return (
     <ul>
@@ -18,3 +30,5 @@ export default function books() {
     </ul>
   );
 }
+
+export { books, submitBookToStore, removeBookFromStore };
