@@ -36,10 +36,10 @@ It is a Single Page App (SPA) that allows users to:
     git clone https://github.com/Bishoy-Samwel/bookstore
     ```
 
-* Navigate to math-magicians folder/directory
+* Navigate to bookstore folder/directory
 
     ```bash
-    cd math-magicians
+    cd bookstore
     ```
 
 * On the comandline, at the project's root, run ```yarn install``` to install app dependencies
