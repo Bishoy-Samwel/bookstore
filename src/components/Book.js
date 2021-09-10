@@ -9,7 +9,7 @@ export default function Book(props) {
       {book.title}
       {book.author}
       <button type="button">Comments</button>
-      <button type="button" onClick={remove(book.id)}>Remove</button>
+      <button type="button" onClick={() => remove(book.id)}>Remove</button>
       <button type="button">Edit</button>
     </li>
   );
