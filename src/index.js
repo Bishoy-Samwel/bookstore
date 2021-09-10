@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/cofigureStore';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
