@@ -1,12 +1,28 @@
-import React from 'react';
-import { submitBookToStore } from './Books';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
 
-const AddBookForm = () => (
-  <form>
-    <input type="text" name="Title" placeholder="Title" />
-    <input type="text" name="Author" placeholder="Author" />
-    <button type="button" onClick={submitBookToStore}>Add Book</button>
-  </form>
-);
+export default function Form(props) {
+  const [book, setBook] = useState({
+    title: '',
+    author: '',
+  });
 
-export default AddBookForm;
+  const onChange = (e) => {
+    if (book[e.target.name] !== e.target.value) {
+      setBook({
+        ...book,
+        [e.target.name]: e.target.value,
+      });
+    }
+  };
+
+  const { add } = props;
+
+  return (
+    <form>
+      <input onChange={onChange} type="text" name="title" placeholder="Title" />
+      <input onChange={onChange} type="text" name="author" placeholder="Author" />
+      <button type="button" onClick={() => add(book)}>Add Book</button>
+    </form>
+  );
+}
