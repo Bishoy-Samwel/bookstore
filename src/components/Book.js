@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Book(props) {
   const { book, remove } = props;
   return (
-    <li key={book.id}>
+    <li>
       {book.category}
       {book.title}
       {book.author}
@@ -14,3 +14,8 @@ export default function Book(props) {
     </li>
   );
 }
+
+Book.propTypes = {
+  book: PropTypes.isRequired,
+  remove: PropTypes.isRequired,
+};

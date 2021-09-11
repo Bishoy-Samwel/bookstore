@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function Form(props) {
+export default function AddBookForm(props) {
   const [book, setBook] = useState({
     title: '',
     author: '',
@@ -26,3 +26,7 @@ export default function Form(props) {
     </form>
   );
 }
+
+AddBookForm.propTypes = {
+  add: PropTypes.isRequired,
+};
