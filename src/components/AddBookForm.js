@@ -8,21 +8,28 @@ export default function AddBookForm(props) {
   });
 
   const onChange = (e) => {
-    if (book[e.target.name] !== e.target.value) {
-      setBook({
-        ...book,
-        [e.target.name]: e.target.value,
-      });
-    }
+    console.log('hey');
+    setBook({
+      ...book,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const { add } = props;
+
+  const handleAddBook = () => {
+    if (book.title && book.author) {
+      add(book);
+    } else {
+      alert('Please complete empty fields!!');
+    }
+  };
 
   return (
     <form>
       <input onChange={onChange} type="text" name="title" placeholder="Title" />
       <input onChange={onChange} type="text" name="author" placeholder="Author" />
-      <button type="button" onClick={() => add(book)}>Add Book</button>
+      <button type="button" onClick={handleAddBook}>Add Book</button>
     </form>
   );
 }
