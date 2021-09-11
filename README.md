@@ -36,6 +36,7 @@ It is a Single Page App (SPA) that allows users to:
     git clone https://github.com/Bishoy-Samwel/bookstore
     ```
 
+
 * Navigate to bookstore folder/directory
 
     ```bash

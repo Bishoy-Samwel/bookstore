@@ -1,16 +1,21 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function User(props) {
-  const { book } = props;
+export default function Book(props) {
+  const { book, remove } = props;
   return (
-    <li key={book.id}>
+    <li>
       {book.category}
-      {book.name}
+      {book.title}
       {book.author}
       <button type="button">Comments</button>
-      <button type="button">Remove</button>
+      <button type="button" onClick={() => remove(book.id)}>Remove</button>
       <button type="button">Edit</button>
     </li>
   );
 }
+
+Book.propTypes = {
+  book: PropTypes.isRequired,
+  remove: PropTypes.isRequired,
+};
