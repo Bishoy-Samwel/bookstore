@@ -36,15 +36,16 @@ export default function Container() {
       <Switch>
         <Route exact path="/">
           <Books books={books} remove={removeBookFromStore} />
+          <AddBookForm add={submitBookToStore} />
         </Route>
         <Route path="/books">
-          <Books />
+          <Books books={books} remove={removeBookFromStore} />
+          <AddBookForm add={submitBookToStore} />
         </Route>
         <Route path="/categories">
           <Categories />
         </Route>
       </Switch>
-      <AddBookForm add={submitBookToStore} />
     </>
   );
 }
